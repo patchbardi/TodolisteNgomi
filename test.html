@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <title>Beispiel</title>
+  </head>
+  <body>
+    <h1>Überschrift</h1>
+    <p>Ein Absatz mit <strong>fettem Text</strong>.</p>
+
+    <p id="first-p" style="border: 1px solid black;">Ein Absatz mit <strong>fettem Text</strong>.</p>
+    <button id="first">Klick!</button>
+ 
+    <a href="http://google.de/">Geh zu Google</a>
+
+    <script>
+           
+           let link = document.querySelector('a');
+           link.addEventListener("click", function(event) {
+               event.preventDefault();
+           });
+             //  console.log("Link wurde geklickt");
+           //    alert("Link wurde geklickt");
+          // });
+
+
+        let button = document.querySelector("button#first");
+        button.addEventListener("click", onButtonClick);
+        const colors = ["yellow", "red", "green"];
+ 
+        let paragraph = document.getElementById("first-p");
+        console.log(paragraph);
+        paragraph.addEventListener("mouseover", onButtonClick);
+ 
+        function onButtonClick(clickEvent) {
+            let num = Math.floor(Math.random() * 3);
+            document.body.style.backgroundColor = colors[num];
+        }
+ 
+    </script>
+
+  </body>
+</html>
